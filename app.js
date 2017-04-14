@@ -23,9 +23,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+var schoolUrl = 'mongodb://localhost:27017/hello';
 var mongo_pw = process.env.MONGO_PW;
-var url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/helloSessions?authSource=admin';
+var url = schoolUrl;
 
 var store = new MongoDBStore({
   uri : url,
